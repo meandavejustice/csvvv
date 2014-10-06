@@ -1,15 +1,25 @@
-var csv = require('csv-parser');
-var fs = require('fs');
+/* global filterTable*/
 
-var openfile = './csv/sample.csv';
+var fs = require('fs');
+var csv = require('csv-parser');
+
 var thead = document.querySelector('thead');
 var tbody = document.querySelector('tbody');
-var saved = true;
+var table = document.querySelector('table');
 var saveIndicator = document.querySelector('.save-ind');
+
+var openfile = './csv/routes.csv';
 var tabindex = 0; // int to inc for setting tabindex on tds
+var saved = true;
 
 document.getElementById('files').addEventListener('change', handleFileSelect);
 document.getElementById('save').addEventListener('click', writeData);
+document.querySelector('.search').addEventListener('keyup', function(ev) {
+  filterTable(ev.target, table)
+});
+keymage('ctrl-s', writeData);
+keymage('ctrl-up', up);
+keymage('ctrl-down', down);
 
 var data = {
     head: [],
@@ -28,8 +38,15 @@ function genHead(labels) {
     data.head.push(label);
   });
 
+  // empty data obj
+  data = {
+    head: [],
+    body: []
+  };
+
   // empty table
-  thead.innerHTML = tbody.innerHTML = '';
+  thead.innerHTML = '';
+  tbody.innerHTML = '';
 
   thead.appendChild(header);
 }
@@ -41,6 +58,8 @@ function setUnsaved() {
 
 function addRow(object, idx) {
   var tr = document.createElement('tr');
+
+  tr.className = 'row';
 
   Object.keys(object).forEach(function(key, inneridx) {
     var td = document.createElement('td');
@@ -102,6 +121,14 @@ function writeData() {
   });
   saved = true;
   saveIndicator.textContent = '';
+}
+
+function down() {
+  document.activeElement.parentElement.nextSibling.querySelector('td').focus();
+}
+
+function up() {
+  document.activeElement.parentElement.previousSibling.querySelector('td').focus();
 }
 
 // load our dummy data

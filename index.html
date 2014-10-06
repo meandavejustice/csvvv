@@ -5,15 +5,13 @@
     </head>
     <body>
       <div class="container">
-        <div class="A">
-          <h2>csv editor</h2><h2 class="save-ind"></h2>
-        </div>
         <div class="C">
-          <input type="file" id="files" name="files[]" multiple />
+          <h2>csv editor</h2><h2 class="save-ind"></h2>
+          <input type="text" class="search" placeholder="Type To Search"/>
           <button id="save">save</button>
-
+          <input type="file" id="files" name="files[]" multiple />
           <div class="D">
-            <table class="B" dir="ltr" border="1">
+            <table class="B filterable" dir="ltr" border="1">
 	            <thead>
 	            </thead>
               <tbody>
@@ -31,6 +29,8 @@
       <!--   location.reload(); -->
       <!--   }); -->
       <!-- </script> -->
+      <script type="text/javascript" src="node_modules/keymage/keymage.min.js"></script>
+      <script type="text/javascript" src="filterTable.js"></script>
       <script type="text/javascript" src="index.js"></script>
     </body>
 </html>

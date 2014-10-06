@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "main": "index.html",
   "window": {
-    "toolbar": false,
-    "width": 800,
-    "height": 600
+    "toolbar": true
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +11,9 @@
   "author": "meandave",
   "license": "MIT",
   "dependencies": {
-    "csv-parser": "^1.4.6"
+    "csv-parser": "^1.4.6",
+    "keymage": "^1.0.1",
+    "list.js": "git://github.com/brianloveswords/list.js#v1.1.1-commonjs"
   },
   "repository": {
     "type": "git",

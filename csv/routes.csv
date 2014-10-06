@@ -1,8 +1,8 @@
-name, fetish, location,route_id,route_short_name,route_long_name,route_type,route_url
+number, number 2, Stop, time, website
 1,1,Vermont,3,http://trimet.org/schedules/r001.htm
 4,4,Division/Fessenden,3,http://trimet.org/schedules/r004.htm
 6,6,Martin Luther King Jr Blvd,3,http://trimet.org/schedules/r006.htm
-8,8,Jackson Park/NE 15th,3,http://trimet.org/schedules/r008.htm
+8,8,Jackson Park/NE 15ths,3,http://trimet.org/schedules/r008.htm
 9,9,Powell Blvd,3,http://trimet.org/schedules/r009.htm
 10,10,Harold St,3,http://trimet.org/schedules/r010.htm
 11,11,Rivergate/Marine Dr,3,http://trimet.org/schedules/r011.htm
