@@ -1,0 +1,26 @@
+{
+  "name": "csvvv",
+  "version": "0.1.0",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 600
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "meandave",
+  "license": "MIT",
+  "dependencies": {
+    "csv-parser": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meandavejustice/csvvv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meandavejustice/csvvv/issues"
+  },
+  "homepage": "https://github.com/meandavejustice/csvvv"
+}

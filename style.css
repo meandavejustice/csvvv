@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: monospace;
+}
+
+.container {
+    /* display: -webkit-flex; */
+    /*  -webkit-flex-flow: column nowrap;  */
+    /* position: absolute; */
+    /* top: 0; bottom: 0; left: 0; right: 0; */
+    /* border: 1px dashed #fc0; */
+    width: 100%;
+    max-width: 1200px;
+}
+
+table {
+    width: 100%;
+    max-width: 1200px;
+}
+
+th {
+    text-transform: capitalize;
+    background: rgb(0, 255, 204);
+}
+
+td {
+    padding: 2px 15px;
+}
+
+td:focus {
+    background: rgb(255, 194, 0);
+}
+
+
+.A {
+    /* -webkit-flex: 0 1 auto; */
+    /* width: 100%; */
+    /* box-sizing: border-box; */
+    /* border: 1px solid red; */
+
+    padding: 20px;
+}
+
+.A h2 {
+    display: inline;
+}
+.B {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* border: 1px solid blue; */
+    /* box-sizing: border-box; */
+}
+
+
+.C {
+    /* border: 1px solid green; */
+    /* box-sizing: border-box; */
+    /* position: relative; */
+/* -webkit-flex: 1 0 auto; */
+    margin: 10px auto;
+}
+
+
+.D {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+
+    margin: 25px auto;
+}
