@@ -119,6 +119,8 @@ function writeData() {
   Object.keys(data.body).forEach(function(key) {
     writeStream.write(data.body[key].join(',') + nl);
   });
+
+  writeStream.end();
   saved = true;
   saveIndicator.textContent = '';
 }
