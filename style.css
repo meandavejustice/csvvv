@@ -6,8 +6,19 @@ body, html {
     font-family: monospace;
 }
 
+body > header {
+    top: 0;
+    background: #FFF;
+    width: 100%;
+    padding: 10px 20px;;
+    border-bottom: 2px solid #DDD;
+    position: fixed;
+    z-index: 4;
+}
+
 .container {
     width: 100%;
+    margin-top: 46px;
 }
 
 table {
@@ -27,12 +38,21 @@ td:focus {
     background: rgb(255, 194, 0);
 }
 
-.C {
+.main {
     margin: 10px auto;
 }
 
-.C > button,
-.C > input,
-.C > h2 {
+.title,
+.main > button,
+.main > input,
+.main > h2 {
     display: inline;
+}
+
+.title:after {
+    content: ' ';
+}
+
+.title.unsaved:after {
+    content: '*';
 }

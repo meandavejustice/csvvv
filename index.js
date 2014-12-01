@@ -6,9 +6,9 @@ var csv = require('csv-parser');
 var thead = document.querySelector('thead');
 var tbody = document.querySelector('tbody');
 var table = document.querySelector('table');
-var saveIndicator = document.querySelector('.save-ind');
+var title = document.querySelector('.title');
 
-var openfile = './csv/routes.csv';
+var openfile = './csv/sample.csv';
 var tabindex = 0; // int to inc for setting tabindex on tds
 var saved = true;
 
@@ -29,6 +29,12 @@ var data = {
 function genHead(labels) {
   var header = document.createElement('tr');
 
+  // empty data obj
+  data = {
+    head: [],
+    body: []
+  };
+
   labels.forEach(function(label) {
     var th = document.createElement('th');
     th.textContent = label + ':';
@@ -38,12 +44,6 @@ function genHead(labels) {
     data.head.push(label);
   });
 
-  // empty data obj
-  data = {
-    head: [],
-    body: []
-  };
-
   // empty table
   thead.innerHTML = '';
   tbody.innerHTML = '';
@@ -52,7 +52,7 @@ function genHead(labels) {
 }
 
 function setUnsaved() {
-  saveIndicator.textContent = '*';
+  title.classList.add('unsaved');
   saved = false;
 }
 
@@ -89,10 +89,6 @@ function onInput(ev) {
 
   var matrix = ev.target.getAttribute('data-matrix').split('-');
   data.body[matrix[0]][matrix[1]] = ev.target.textContent;
-
-  // console.log('CHANGE:',
-  //             ev.target.textContent,
-  //             ev.target.getAttribute('data-matrix'));
 }
 
 function handleFileSelect(ev) {
@@ -101,19 +97,19 @@ function handleFileSelect(ev) {
   var idx = 0;
 
   fs.createReadStream(openfile).pipe(csv())
-  .on('data', function(data) {
+  .on('data', function(dat) {
     if (!head) {
-      genHead(Object.keys(data));
+      genHead(Object.keys(dat));
       head = !head;
     }
 
-    addRow(data, idx++);
+    addRow(dat, idx++);
   });
 }
 
 function writeData() {
   var nl = '\n';
-  var writeStream = fs.createWriteStream(openfile)
+  var writeStream = fs.createWriteStream(openfile);
   writeStream.write(data.head.join(',') + nl);
 
   Object.keys(data.body).forEach(function(key) {
@@ -122,7 +118,7 @@ function writeData() {
 
   writeStream.end();
   saved = true;
-  saveIndicator.textContent = '';
+  title.classList.remove('unsaved');
 }
 
 function down() {

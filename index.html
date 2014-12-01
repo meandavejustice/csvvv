@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-    </head>
-    <body>
-      <div class="container">
-        <div class="C">
-          <h2>csv editor</h2><h2 class="save-ind"></h2>
-          <input type="text" class="search" placeholder="Type To Search"/>
-          <button id="save">save</button>
-          <input type="file" id="files" name="files[]" multiple />
-          <div class="D">
-            <table class="B filterable" dir="ltr" border="1">
-	            <thead>
-	            </thead>
-              <tbody>
-              </tbody>     
-            </table>
-          </div>
-        </div>        
-      </div>
-      <!-- <script> -->
-      <!--   var path = './index.js'; -->
-      <!--   var fs = require('fs'); -->
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <header>
+      <h2 class="title">csv editor</h2>
+      <input type="text" class="search" placeholder="Type To Search"/>
+      <button id="save">save</button>
+      <input type="file" id="files" name="files[]" multiple />
+    </header>
+    <div class="container">
+      <div class="main">
+        <div>
+          <table class="filterable" dir="ltr" border="1">
+	          <thead>
+	          </thead>
+            <tbody>
+            </tbody>     
+          </table>
+        </div>
+      </div>     
+    </div>
+    <script>
+      var path = './index.js';
+      var fs = require('fs');
 
-      <!--   fs.watch(path, function() { -->
-      <!--   if (location) -->
-      <!--   location.reload(); -->
-      <!--   }); -->
-      <!-- </script> -->
-      <script type="text/javascript" src="node_modules/keymage/keymage.min.js"></script>
-      <script type="text/javascript" src="filterTable.js"></script>
-      <script type="text/javascript" src="index.js"></script>
-    </body>
+      fs.watch(path, function() {
+      if (location)
+      location.reload();
+      });
+    </script>
+    <script type="text/javascript" src="node_modules/keymage/keymage.min.js"></script>
+    <script type="text/javascript" src="filterTable.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
 </html>
